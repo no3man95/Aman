@@ -31,6 +31,8 @@ return new class extends Migration
 
         $table->intger('amount');
 
+        $table->boolean('confirm');
+
 
 
 

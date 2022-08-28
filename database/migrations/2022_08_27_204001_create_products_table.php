@@ -16,17 +16,24 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 
-        $table->integer('merchant_id')->unsigned();
+        $table->integer('user_id')->unsigned();
         //rest of fields then...
-        $table->foreign('merchant_id')->references('id')->on('users');
 
             $table->string('image');
             $table->string('title');
             $table->text('details');
-            $table->intger('price');
+            $table->integer('price');
+
+
+            $table->boolean('confirm');
 
             $table->timestamps();
         });
+
+//         Schema::table('products', function($table) {
+//        $table->foreign('user_id')->references('id')->on('users');
+//    });
+
     }
 
     /**
